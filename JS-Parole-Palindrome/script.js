@@ -4,25 +4,25 @@
 
 const parolaInserita = prompt("Inserisci una parola : ");
 
-console.log(verificaParolaPalindroma());
+console.log(verificaParolaPalindroma(parolaInserita));
 
 // Creare una funzione per capire se la parola inserita è palindroma
 
-function verificaParolaPalindroma() {
+function verificaParolaPalindroma(stringa) {
 
     // const parolaInvertita = stringa.split("").reverse().join("");
 
     let parolaInvertita = "";
 
-    for (let i = parolaInserita.length - 1; i >= 0; i--) {
+    for (let i = stringa.length - 1; i >= 0; i--) {
 
-        parolaInvertita = parolaInvertita + parolaInserita[i];
+        parolaInvertita += stringa[i];
 
     }
 
     // SE la parola inserita dall'utente è uguale alla parola inserita ma invertita
 
-    if (parolaInserita === parolaInvertita) {
+    if (stringa === parolaInvertita) {
 
         // La parola inserita è palindroma (otto, oro, afa)
 
