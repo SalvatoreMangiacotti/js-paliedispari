@@ -2,15 +2,15 @@
 
 // Chiedere all’utente di inserire una parola
 
-const parolaInserita = prompt("Inserisci una parola");
+const parolaInserita = prompt("Inserisci una parola : ");
 
 console.log(verificaParolaPalindroma(parolaInserita));
 
 // Creare una funzione per capire se la parola inserita è palindroma
 
-function verificaParolaPalindroma(parola) {
+function verificaParolaPalindroma(stringa) {
 
-    const parolaInvertita = parola.split("").reverse().join("");
+    const parolaInvertita = stringa.split("").reverse().join("");
 
     // SE la parola inserita dall'utente è uguale alla parola inserita ma invertita
 
