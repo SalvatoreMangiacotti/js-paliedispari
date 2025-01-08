@@ -1,29 +1,67 @@
-// Parole Palindrome
+// Pari o Dispari
 
-// Chiedere all’utente di inserire una parola
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 
-const parolaInserita = prompt("Inserisci una parola : ");
+const sceltaPariDispariUtente = prompt("Scegli tra pari o dispari e inserisci la tua risposta : ");
+const numeroSceltoDallUtente = parseInt(prompt("Inserisci un numero da 1 a 5 : "));
 
-console.log(verificaParolaPalindroma(parolaInserita));
+console.log("L'utente ha scelto: ", sceltaPariDispariUtente);
+console.log("Il numero scelto dall'utente è : ", numeroSceltoDallUtente);
 
-// Creare una funzione per capire se la parola inserita è palindroma
 
-function verificaParolaPalindroma(stringa) {
 
-    const parolaInvertita = stringa.split("").reverse().join("");
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 
-    // SE la parola inserita dall'utente è uguale alla parola inserita ma invertita
+function numRandomComputer(min, max) {
 
-    if (parolaInserita === parolaInvertita) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 
-        // La parola inserita è palindroma (otto, oro, afa)
+}
 
-        return "La parola inserita è palindroma";
+const numEstrattoDalComputer = numRandomComputer(1, 5);
+
+console.log("Il numero estratto dal computer è : ", numEstrattoDalComputer);
+
+
+
+// Sommiamo i due numeri
+
+const sommaNumeriGiocati = numeroSceltoDallUtente + numEstrattoDalComputer;
+
+console.log("La somma del numero scelto dall'utente e quella estratta del pc è: ", sommaNumeriGiocati);
+
+
+
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+
+function verificaPariDispari() {
+
+    if (sommaNumeriGiocati % 2 === 0) {
+
+        return "pari";
 
     } else {
 
-        return "La parola inserita NON è palindroma";
+        return "dispari";
 
     }
+
+}
+
+const risultatoPariDispari = verificaPariDispari();
+
+console.log("La somma dei due numeri è un numero: ", verificaPariDispari());
+
+
+
+// Dichiariamo chi ha vinto.
+
+if ((risultatoPariDispari === "pari" && sceltaPariDispariUtente === "pari") || (risultatoPariDispari === "dispari" && sceltaPariDispariUtente === "dispari")) {
+
+    console.log("Congratulazioni, hai vinto! 🤩");
+
+} else {
+
+    console.log("Ha vinto il computer, ritenta. 🤖");
 
 }
