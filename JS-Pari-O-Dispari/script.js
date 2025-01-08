@@ -1,4 +1,4 @@
-// Palidroma
+// Parole Palindrome
 
 // Chiedere all’utente di inserire una parola
 
