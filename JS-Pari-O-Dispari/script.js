@@ -34,9 +34,9 @@ console.log("La somma del numero scelto dall'utente e quella estratta del pc è:
 
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 
-function verificaPariDispari() {
+function verificaPariDispari(totSommaGiocata) {
 
-    if (sommaNumeriGiocati % 2 === 0) {
+    if (totSommaGiocata % 2 === 0) {
 
         return "pari";
 
@@ -48,9 +48,9 @@ function verificaPariDispari() {
 
 }
 
-const risultatoPariDispari = verificaPariDispari();
+const risultatoPariDispari = verificaPariDispari(sommaNumeriGiocati);
 
-console.log("La somma dei due numeri è un numero: ", verificaPariDispari());
+console.log("La somma dei due numeri è un numero: ", risultatoPariDispari);
 
 
 
